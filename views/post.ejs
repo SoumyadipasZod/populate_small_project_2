@@ -1,0 +1,38 @@
+<%- include("partial/header"); %>
+    <div class="container">
+        <%- include("partial/nav"); %>
+
+            <h1>Add Post</h1>
+            <form action="/add-post" method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Post Heading</label>
+                            <input type="text" name="heading" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Post Content</label>
+                            <input type="text" name="content" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Select User</label>
+                            <select name="selectuser" class="form-control">
+                            <option disabled selected>Select User</option>
+                            <% for(let user of Users) { %>
+                                <option value="<%= user.id %>"><%= user.Name %></option>
+                            <% } %>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Add</button>
+
+            </form>
+    </div>
+
+    <%- include("partial/footer"); %>

@@ -1,0 +1,40 @@
+
+<%- include("partial/header") %>
+
+      
+<div class="container">
+    <%- include("partial/nav") %> 
+   <h2>Below down here is your Blog</h2>          
+   <table class="table table-dark">
+     <thead>
+       <tr>
+         <th scope="col">User Name</th>
+         <th scope="col">Email</th>
+         <th scope="col">Phone</th>
+         <th scope="col">Post</th>
+         <th scope="col">Comment</th>
+       </tr>
+     </thead>
+      <% for(let dataa of displayData){%>
+     <tbody>
+      <tr>
+        <td> <%=dataa.commentUser.Name %> </td>
+        <td> <%=dataa.commentUser.Email %> </td>
+        <td> <%=dataa.commentUser.Phn %> </td>
+        <td> <%=dataa.commentPost.postContent %> </td>
+        <td> <%=dataa.comment %> </td>
+
+
+
+
+
+           
+        
+      </tr>
+   </tbody>
+   <%}%>
+   </table>
+ </div>
+
+ <%- include("partial/footer") %> 
+

@@ -1,0 +1,41 @@
+<%- include("partial/header") %>
+
+
+<div class="container">
+    <%- include("partial/nav") %>
+    <h2>Add Comment</h2>
+    <form action="/add-comment" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Select User</label>
+                    <select class="form-control" name="user">
+                        <option disabled selected>Select User</option>
+                        <% for(let data1 of displayData1) {%>
+                        <option value="<%= data1.id %>"><%= data1.Name %></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Choose Post</label>
+                    <select class="form-control" name="post">
+                        <option disabled selected>Choose Post</option>
+                        <% for(let data2 of displayData2) {%>
+                        <option value="<%= data2.id %>"><%= data2.postContent %></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Add Your Comment</label>
+                    <textarea class="form-control" name="comment"  rows="3"></textarea>
+                  </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Add</button>
+    </form>
+</div>
+
+<%- include("partial/footer") %>
